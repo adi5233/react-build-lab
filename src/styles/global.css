@@ -1,0 +1,156 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  margin: 0;
+  font-family:
+    Inter,
+    system-ui,
+    sans-serif;
+
+  background: #f5f7fb;
+  color: #172033;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px;
+  padding-top: calc(76px + 32px);
+  margin-top: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 20px 32px;
+
+  background: white;
+  border-bottom: 1px solid #e5e8ef;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.header nav {
+  display: flex;
+  gap: 8px;
+}
+
+.header button {
+  border: 0;
+  background: transparent;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.header button.active {
+  background: #e9eef8;
+}
+
+.hero {
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  margin-bottom: 20px;
+}
+
+.eyebrow {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  opacity: .55;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.card,
+.panel {
+  background: white;
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 20px;
+}
+
+.card span,
+.card small {
+  display: block;
+  opacity: .6;
+}
+
+.card strong {
+  display: block;
+  font-size: 28px;
+  margin: 8px 0;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+
+  border: 1px solid #d7dce5;
+  border-radius: 8px;
+
+  margin: 10px 0 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 12px;
+
+  border-bottom:
+    1px solid #edf0f5;
+}
+
+.chart {
+  overflow: auto;
+}
+
+@media (max-width: 700px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .header {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .container {
+    padding-top: calc(156px + 32px);
+  }
+}

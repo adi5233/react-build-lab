@@ -1,0 +1,1 @@
+production = npx webpack --config webpack/webpack.prod.js --mode production

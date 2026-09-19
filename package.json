@@ -1,0 +1,40 @@
+{
+  "name": "react-build-lab",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "webpack serve --config webpack/webpack.dev.js",
+    "build": "webpack --config webpack/webpack.prod.js",
+    "analyze": "node scripts/analyze-build.js",
+    "compare": "node scripts/compare-builds.js",
+    "clean": "node scripts/clean.js",
+    "demo": "npm run build && npm run analyze"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "recharts": "^2.15.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.27.1",
+    "@babel/preset-env": "^7.27.1",
+    "@babel/preset-react": "^7.27.1",
+    "babel-loader": "^10.0.0",
+
+    "css-loader": "^7.1.2",
+    "style-loader": "^4.0.0",
+
+    "html-webpack-plugin": "^5.6.3",
+    "mini-css-extract-plugin": "^2.9.2",
+
+    "copy-webpack-plugin": "^13.0.0",
+    "compression-webpack-plugin": "^11.1.0",
+
+    "webpack": "^5.99.9",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.0",
+
+    "webpack-bundle-analyzer": "^4.10.2"
+  }
+}
