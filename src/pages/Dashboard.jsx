@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from "react";
-import _ from "lodash";
+import filter from "lodash/filter";
 
 import Card from "../components/Card";
 import UserTable from "../components/UserTable";
@@ -13,10 +13,9 @@ function Dashboard() {
   const [search, setSearch] = useState("");
 
   const filteredUsers = useMemo(() => {
-    return _.filter(users, (user) =>
-      user.name
-        .toLowerCase()
-        .includes(search.toLowerCase())
+    return filter(
+      users,
+      (user) => user.name.toLowerCase().includes(search.toLowerCase())
     );
   }, [search]);
 
