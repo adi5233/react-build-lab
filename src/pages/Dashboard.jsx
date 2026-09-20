@@ -1,6 +1,8 @@
 import React, { useMemo, useState } from "react";
 import filter from "lodash/filter";
 
+import { add } from "../utils/math";
+
 import Card from "../components/Card";
 import UserTable from "../components/UserTable";
 
@@ -61,7 +63,7 @@ function Dashboard() {
       </div>
 
       <div className="panel">
-        <h2>Users</h2>
+        <h2>Users ({add(filteredUsers.length, 0)})</h2>
 
         <input
           value={search}
