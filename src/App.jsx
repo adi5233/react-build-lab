@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { Suspense, useState } from "react";
 
 import Header from "./components/Header";
 
 import Dashboard from "./pages/Dashboard";
-import Analytics from "./pages/Analytics";
 import Reports from "./pages/Reports";
 import Settings from "./pages/Settings";
+
+const Analytics = React.lazy(() => import("./pages/Analytics"));
 
 function App() {
   const [page, setPage] = useState("dashboard");
@@ -13,7 +14,11 @@ function App() {
   const renderPage = () => {
     switch (page) {
       case "analytics":
-        return <Analytics />;
+        return (
+          <Suspense fallback={<p>Loading...</p>}>
+            <Analytics />
+          </Suspense>
+        );
 
       case "reports":
         return <Reports />;
